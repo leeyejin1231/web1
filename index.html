@@ -8,6 +8,33 @@
 
 <body>
   <h1><a href="index.html">예진이 블로그</a></h1>
+    <input type="button" value="night" onclick="
+    var target =  document.querySelector('body');
+    if(this.value == 'night') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color='powderblue';
+        i++;
+      }
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color='rgb(206, 176, 255)';
+        i++;
+      }
+    }
+  ">
+  
   <div id="grid">
     <ol>
       <li><a href="1.html">일기</a></li>
