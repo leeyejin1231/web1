@@ -3,37 +3,44 @@
 <head>
   <title>Yejin's blog - Welcome</title>
   <meta charset="utf-8">
+  <script>
+    function LinksSetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color=color;
+        i++;
+      }
+    }
+    function BodySetColor(color){
+      document.querySelector('body').style.color = color;
+    }
+    function BodySetBackgroundColor(color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
+    function nightDayHandler(self){
+      var target =  document.querySelector('body');
+      if(self.value == 'night') {
+        BodySetBackgroundColor('black');
+        BodySetColor('white');
+        self.value = 'day';
+        LinksSetColor('powderblue');
+      } else {
+        BodySetBackgroundColor('white');
+        BodySetColor('black');
+        self.value = 'night';        
+        LinksSetColor('rgb(206, 176, 255)');
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <h1><a href="index.html">예진이 블로그</a></h1>
     <input type="button" value="night" onclick="
-    var target =  document.querySelector('body');
-    if(this.value == 'night') {
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i=0;
-      while(i<alist.length){
-        alist[i].style.color='powderblue';
-        i++;
-      }
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i=0;
-      while(i<alist.length){
-        alist[i].style.color='rgb(206, 176, 255)';
-        i++;
-      }
-    }
-  ">
+      nightDayHandler(this);
+    ">
   
   <div id="grid">
     <ol>
@@ -54,7 +61,7 @@
       <h2>Yejin's blog</h2>
       <img src="images/sss.PNG" style="width:700px;"><br>
       안녕하세요! 저는 <strong>예진</strong>이에요.
-      만나서 반가워요!! 저는 <a href = "https://www.incheon.go.kr/index" target="_blank" title = "인천시청 사이트"><u>인천</u></a>에 살고 있어요.
+      만나서 반가워요!! 저는 <a href = "https://www.incheon.go.kr/index" target="_blank" title = "인천시청 사이트"><u>여기</u></a>에 살고 있어요.
     </div>
   </div>
 </body>
